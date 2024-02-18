@@ -1,3 +1,91 @@
 @use 'reset'
 @use 'mixins'
 @use 'variables'
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..9001,100..900&display=swap')
+
+// Setting all the fonts
+$fonts: variables.$h1, variables.$h2, variables.$h3, variables.$h4, variables.$h5
+
+@for $i from 1 through 5 
+  h#{$i} 
+    font: nth($fonts, $i)
+
+p
+  font: variables.$p
+
+.navbar__menu > li > a 
+  font: variables.$h2
+
+h1
+  color: variables.$dark-blue
+
+.about, .skills-container, .projects-container, .tech-container, .contact
+  padding: 0 40px
+
+.divider-custom 
+  margin: 20px 0px
+  width: 100%
+  @include mixins.flex-row(center, center, 0)
+  .divider-custom-line
+    width: 72px
+    height: 7px
+    background-color: variables.$red
+    margin-left: .5rem
+    margin-right: .5rem
+    border-radius: 15px
+  .divider-custom-icon
+    font-size: 28px
+    color: variables.$red
+
+.section-title
+  @include mixins.flex-column($gap: 8px)
+  margin-bottom: 30px 
+  .title-line
+    width: 100%
+    height: 2px
+    background-color: variables.$dark-blue
+
+.header
+  @include mixins.flex-row(space-between, center)
+  padding: 20px 32px
+  background-color: variables.$red
+  color: variables.$white
+  text-transform: uppercase
+  h1
+    color: variables.$white
+  .navbar
+    @include mixins.flex-row($align: center, $gap: 30px)
+    .navbar__menu
+      @include mixins.flex-row($align: center, $gap: 30px)
+      list-style: none
+      padding: 0
+      li > a
+        text-decoration: none
+        color: variables.$white
+
+.banner
+  padding-top: 70px
+  padding-bottom: 100px
+  @include mixins.flex-column(center, center, 0)
+  background-color: variables.$dark-blue
+  color: variables.$white
+  h1
+    color: variables.$white
+  &__foto
+    width: 14rem
+    height: 14rem
+    border: 0
+    border-radius: 50%
+    background: url(../assets/logo2.png)
+    background-size: cover
+    background-position: center
+    margin-bottom: 50px
+
+.about
+  padding-top: 60px
+  padding-bottom: 60px
+  &__content
+    @include mixins.flex-row($gap: 20px)
+    article
+      @include mixins.flex-column
