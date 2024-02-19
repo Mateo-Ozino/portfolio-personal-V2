@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..9001,100..900&display=swap')
 
+@tailwind base
+@tailwind components
+@tailwind utilities
+
 // Setting all the fonts
 $fonts: variables.$h1, variables.$h2, variables.$h3, variables.$h4, variables.$h5
 
@@ -20,7 +24,7 @@ p
 h1
   color: variables.$dark-blue
 
-.about, .skills-container, .projects-container, .tech-container, .contact
+.about, .skills-techs-wraper, .projects-container, .contact
   padding: 0 40px
 
 .divider-custom 
@@ -29,13 +33,13 @@ h1
   @include mixins.flex-row(center, center, 0)
   .divider-custom-line
     width: 72px
-    height: 7px
+    height: 5px
     background-color: variables.$red
     margin-left: .5rem
     margin-right: .5rem
     border-radius: 15px
   .divider-custom-icon
-    font-size: 28px
+    font-size: 25px
     color: variables.$red
 
 .section-title
@@ -45,6 +49,11 @@ h1
     width: 100%
     height: 2px
     background-color: variables.$dark-blue
+
+.progress-bar
+  background-color: variables.$gray
+  > div
+    background-color: variables.$red
 
 .header
   @include mixins.flex-row(space-between, center)
@@ -72,9 +81,10 @@ h1
   color: variables.$white
   h1
     color: variables.$white
+    text-transform: uppercase
   &__foto
-    width: 14rem
-    height: 14rem
+    width: 200px
+    height: 200px
     border: 0
     border-radius: 50%
     background: url(../assets/logo2.png)
@@ -89,3 +99,26 @@ h1
     @include mixins.flex-row($gap: 20px)
     article
       @include mixins.flex-column
+
+.skills-techs-wraper
+  @include mixins.flex-column($gap: 60px)
+  margin-bottom: 80px 
+  &__skill-container
+    @include mixins.flex-column($gap: 30px)
+    &--skill
+      display: grid
+      grid-template-columns: 1fr 4fr 1fr
+      grid-template-rows: 1fr
+      grid-column-gap: 0px
+      grid-row-gap: 0px
+      align-items: center
+      & :last-child
+        justify-self: flex-end
+  .tech-container
+    @include mixins.flex-column($gap: 50px)
+    &__images
+      @include mixins.flex-row(space-between, center, 0)
+      figure
+        width: 60px
+        & :hover
+          

@@ -32,6 +32,9 @@ p {
   text-wrap: pretty;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 h1 {
   font: normal 700 30px/normal "Montserrat", sans-serif;
 }
@@ -64,7 +67,7 @@ h1 {
   color: #1F2D41;
 }
 
-.about, .skills-container, .projects-container, .tech-container, .contact {
+.about, .skills-techs-wraper, .projects-container, .contact {
   padding: 0 40px;
 }
 
@@ -79,14 +82,14 @@ h1 {
 }
 .divider-custom .divider-custom-line {
   width: 72px;
-  height: 7px;
+  height: 5px;
   background-color: #FA4F4F;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 15px;
 }
 .divider-custom .divider-custom-icon {
-  font-size: 28px;
+  font-size: 25px;
   color: #FA4F4F;
 }
 
@@ -102,6 +105,13 @@ h1 {
   width: 100%;
   height: 2px;
   background-color: #1F2D41;
+}
+
+.progress-bar {
+  background-color: #C6C6C6;
+}
+.progress-bar > div {
+  background-color: #FA4F4F;
 }
 
 .header {
@@ -152,10 +162,11 @@ h1 {
 }
 .banner h1 {
   color: #FFFFFF;
+  text-transform: uppercase;
 }
 .banner__foto {
-  width: 14rem;
-  height: 14rem;
+  width: 200px;
+  height: 200px;
   border: 0;
   border-radius: 50%;
   background: url(../assets/logo2.png);
@@ -181,6 +192,50 @@ h1 {
   justify-content: initial;
   align-items: initial;
   gap: 0;
+}
+
+.skills-techs-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+.skills-techs-wraper__skill-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
+  gap: 30px;
+}
+.skills-techs-wraper__skill-container--skill {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+.skills-techs-wraper__skill-container--skill :last-child {
+  justify-self: flex-end;
+}
+.skills-techs-wraper .tech-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
+  gap: 50px;
+}
+.skills-techs-wraper .tech-container__images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.skills-techs-wraper .tech-container__images figure {
+  width: 60px;
 }
 
 /*# sourceMappingURL=style.css.map */

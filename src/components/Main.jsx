@@ -1,7 +1,6 @@
 import { About } from "./About"
-import { TechContainer } from "./TechContainer"
 import { ProjectsContainer } from "./ProjectsContainer"
-import { SkillsContainer } from "./SkillsContainer"
+import { SkillsContainer } from "./skills_components/SkillsContainer"
 import { ContactForm } from "./ConctactForm"
 import { Banner } from "./Banner"
 
@@ -11,7 +10,6 @@ export function Main() {
       <Banner />
       <About />
       <SkillsContainer />
-      <TechContainer />
       <ProjectsContainer />
       <ContactForm />
     </main>

@@ -1,4 +1,4 @@
-import { Divider } from './Divider'
+import { Divider } from './general_components/Divider'
 
 export function Banner() {
   return (

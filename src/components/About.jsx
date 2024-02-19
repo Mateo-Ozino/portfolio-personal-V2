@@ -1,6 +1,7 @@
-import { SectionTitle } from "./SectionTitle"
+import { SectionTitle } from "./general_components/SectionTitle"
 
 export function About() {
+  
   return (
     <section className="about" id="about">
       <SectionTitle>
