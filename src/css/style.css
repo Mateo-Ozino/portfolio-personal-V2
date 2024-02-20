@@ -35,6 +35,10 @@ p {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+main {
+  background-color: #F5F5F5;
+}
+
 h1 {
   font: normal 700 30px/normal "Montserrat", sans-serif;
 }
@@ -236,6 +240,125 @@ h1 {
 }
 .skills-techs-wraper .tech-container__images figure {
   width: 60px;
+}
+.skills-techs-wraper .tech-container__images figure img {
+  transition: all 0.3s ease-in-out;
+}
+.skills-techs-wraper .tech-container__images figure :hover {
+  transform: scale(1.2);
+}
+
+.projects-container {
+  margin-bottom: 80px;
+}
+.projects-container__project-wraper {
+  display: flex;
+  flex-direction: row;
+  justify-content: initial;
+  align-items: initial;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 20px 0;
+}
+.projects-container ::-webkit-scrollbar {
+  display: none;
+}
+.projects-container__project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex: 0 0 auto;
+  width: 400px;
+  padding: 60px 20px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  background-color: #FFFFFF;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.projects-container__project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.projects-container__project-content h2 {
+  text-align: center;
+}
+.projects-container__project-content figure {
+  width: 150px;
+}
+.projects-container__project-content p {
+  width: 90%;
+  text-align: center;
+}
+.projects-container__project-button {
+  width: 90%;
+}
+.projects-container__project-button button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 20px 0;
+  background-color: #1F2D41;
+  border-radius: 16px;
+  color: #FFFFFF;
+  cursor: auto;
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.contact__container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.contact__container form .contact__inputs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+}
+.contact__container form .contact__inputs-container :nth-child(3) {
+  grid-area: 3/1/3/3;
+}
+.contact__container form .contact__inputs-container input, .contact__container form .contact__inputs-container textarea {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+}
+.contact__container form .contact__inputs-container input::placeholder, .contact__container form .contact__inputs-container textarea::placeholder {
+  font: normal 400 16px/normal "Montserrat", sans-serif;
+  color: #444444;
+}
+.contact__container form .contact__button-container button {
+  width: 100%;
+  padding: 20px;
+  background-color: #1F2D41;
+  border-radius: 16px;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=style.css.map */

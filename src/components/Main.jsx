@@ -1,5 +1,5 @@
 import { About } from "./About"
-import { ProjectsContainer } from "./ProjectsContainer"
+import { ProjectsContainer } from "./projects_components/ProjectsContainer"
 import { SkillsContainer } from "./skills_components/SkillsContainer"
 import { ContactForm } from "./ConctactForm"
 import { Banner } from "./Banner"
