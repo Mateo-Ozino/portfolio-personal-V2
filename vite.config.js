@@ -11,13 +11,13 @@ export default defineConfig({
     },
   },
   base: './',
-  build: {
-    assetsDir: 'assets/',
-    outDir: 'dist',
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
-    },
-  },
+  // build: {
+  //   assetsDir: 'assets/',
+  //   outDir: 'dist',
+  //   rollupOptions: {
+  //     output: {
+  //       manualChunks: undefined,
+  //     },
+  //   },
+  // },
 })

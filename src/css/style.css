@@ -345,7 +345,6 @@ h1 {
   background-color: #1F2D41;
   border-radius: 16px;
   color: #FFFFFF;
-  cursor: auto;
 }
 
 .contact {
@@ -400,7 +399,6 @@ h1 {
 }
 .contact__container form .contact__error-message {
   color: #FA4F4F;
-  font: normal 400 20px/normal "Montserrat", sans-serif;
   margin-top: 5px;
   margin-left: 5px;
 }
@@ -498,11 +496,17 @@ p {
   .divider-custom .divider-custom-icon {
     font-size: 20px;
   }
+  .section-title {
+    margin-bottom: 20px;
+  }
   .header, .header--full {
-    padding: 18px 16px 16px 16px;
+    padding: 20px;
+  }
+  .header--full {
+    padding: 20px 20px 30px 20px;
   }
   .banner {
-    padding: 10px 0 60px 0;
+    padding: 10px 0 40px 0;
   }
   .banner__foto {
     width: 120px;
@@ -510,7 +514,7 @@ p {
     margin-bottom: 20px;
   }
   .about {
-    padding-top: 30px;
+    padding-top: 36px;
     padding-bottom: 30px;
   }
   .about__content {
@@ -522,7 +526,7 @@ p {
   }
   .skills-techs-wraper {
     gap: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .skills-techs-wraper h1 {
     padding: 20px 40px;
@@ -554,6 +558,9 @@ p {
   .projects-container {
     margin-bottom: 20px;
   }
+  .projects-container__project-wraper {
+    padding: 0 0 20px 0;
+  }
   .projects-container__project {
     padding: 20px;
     width: 270px;
@@ -564,15 +571,31 @@ p {
   .projects-container__project .projects-container__project-button button {
     padding: 15px 0;
   }
+  .contact {
+    padding-top: 10px;
+  }
   .contact > .contact__container > form > .contact__inputs-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
   }
   .contact > .contact__container > form > .contact__inputs-container fieldset {
     width: 100%;
+  }
+  .contact > .contact__container > form > .contact__inputs-container fieldset input::placeholder, .contact > .contact__container > form > .contact__inputs-container fieldset form .contact__inputs-container textarea::placeholder, .contact > .contact__container > form > .contact__inputs-container form .contact__inputs-container fieldset textarea::placeholder {
+    font: normal 400 16px/normal "Montserrat", sans-serif;
+  }
+  .contact > .contact__container > form > .contact__inputs-container fieldset textarea::placeholder {
+    font: normal 400 16px/normal "Montserrat", sans-serif;
+  }
+  .contact > .contact__container > form > .contact__button-container > button {
+    padding: 18px 0;
+    font: normal 500 12px/normal "Montserrat", sans-serif;
+  }
+  .contact > .contact__container > form > .contact__error-message {
+    font: normal 400 16px/normal "Montserrat", sans-serif;
   }
   .footer__contact-info {
     gap: 10px;

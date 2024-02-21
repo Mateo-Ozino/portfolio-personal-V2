@@ -62,7 +62,7 @@ export function ContactForm() {
                   }
                 })}
               />
-              <p className="contact__error-message">{errors.name?.message}</p>
+              <h3 className="contact__error-message">{errors.name?.message}</h3>
             </fieldset>
             <fieldset>
               <input 
@@ -82,7 +82,7 @@ export function ContactForm() {
                   }
                 })} 
               />
-              <p className="contact__error-message">{errors.mail?.message}</p>
+              <h3 className="contact__error-message">{errors.mail?.message}</h3>
             </fieldset>
             <fieldset>
               <textarea 
@@ -102,7 +102,7 @@ export function ContactForm() {
                   }
                 })} 
               />
-              <p className="contact__error-message">{errors.mensaje?.message}</p>
+              <h3 className="contact__error-message">{errors.mensaje?.message}</h3>
             </fieldset>
           </div>
           <div className="contact__button-container w-full">

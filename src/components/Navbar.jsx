@@ -7,25 +7,25 @@ export function Navbar() {
   const isClosed = useHandleMenu((state) => state.isClosed) //Inicializado en true
   const openMenu = useHandleMenu((state) => state.openMenu)
 
-  const [anchoComponente, setAnchoComponente] = useState(0);
+  const [anchoComponente, setAnchoComponente] = useState(0)
 
   const handleResize = () => {
-    const ancho = document.getElementById('root').offsetWidth;
-    setAnchoComponente(ancho);
-  };
+    const ancho = document.getElementById('root').offsetWidth
+    setAnchoComponente(ancho)
+  }
 
   useEffect(() => {
     // Configuración inicial
-    handleResize();
+    handleResize()
 
     // Agregar el evento de escucha del cambio de tamaño
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
 
     // Limpiar el evento de escucha al desmontar el componente
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <>
@@ -44,10 +44,10 @@ export function Navbar() {
           <>
             <nav className={isClosed ? "navbar--collapsed" : "navbar--opened"}>
               <ul className={isClosed ? "navbar__menu--collapsed" : "navbar__menu--opened"}>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#skills-tech-wraper">Habilidades</a></li>
-                <li><a href="#projects-container">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li onClick={openMenu}><a href="#about">Sobre mí</a></li>
+                <li onClick={openMenu}><a href="#skills-tech-wraper">Habilidades</a></li>
+                <li onClick={openMenu}><a href="#projects-container">Proyectos</a></li>
+                <li onClick={openMenu}><a href="#contact">Contacto</a></li>
               </ul>
             </nav>
             <h4 style={isClosed ? {display: "none"} : {display: "block"}}>Esp | Eng</h4>
