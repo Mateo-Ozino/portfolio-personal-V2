@@ -32,39 +32,8 @@ p {
   text-wrap: pretty;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 main {
   background-color: #F5F5F5;
-}
-
-h1 {
-  font: normal 700 30px/normal "Montserrat", sans-serif;
-}
-
-h2 {
-  font: normal 600 20px/normal "Montserrat", sans-serif;
-}
-
-h3 {
-  font: normal 400 16px/normal "Montserrat", sans-serif;
-}
-
-h4 {
-  font: normal 500 12px/normal "Montserrat", sans-serif;
-}
-
-h5 {
-  font: normal 400 8px/normal "Montserrat", sans-serif;
-}
-
-p {
-  font: normal 400 16px/normal "Montserrat", sans-serif;
-}
-
-.navbar__menu > li > a {
-  font: normal 600 20px/normal "Montserrat", sans-serif;
 }
 
 h1 {
@@ -87,14 +56,12 @@ h1 {
 .divider-custom .divider-custom-line {
   width: 72px;
   height: 5px;
-  background-color: #FA4F4F;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 15px;
 }
 .divider-custom .divider-custom-icon {
   font-size: 25px;
-  color: #FA4F4F;
 }
 
 .section-title {
@@ -118,28 +85,41 @@ h1 {
   background-color: #FA4F4F;
 }
 
-.header {
+.main--hidden, .footer--hidden {
+  display: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.header, .header--full {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  padding: 20px 32px;
+  padding: 30px 20px;
   background-color: #FA4F4F;
   color: #FFFFFF;
   text-transform: uppercase;
 }
-.header h1 {
+.header h1, .header--full h1 {
   color: #FFFFFF;
+  align-self: start;
+  margin-top: 4px;
 }
-.header .navbar {
+.header svg, .header--full svg {
+  justify-self: end;
+  font-size: 30px;
+}
+.header .navbar, .header--full .navbar {
   display: flex;
   flex-direction: row;
   justify-content: initial;
   align-items: center;
   gap: 30px;
 }
-.header .navbar .navbar__menu {
+.header .navbar .navbar__menu, .header--full .navbar .navbar__menu {
   display: flex;
   flex-direction: row;
   justify-content: initial;
@@ -148,9 +128,51 @@ h1 {
   list-style: none;
   padding: 0;
 }
-.header .navbar .navbar__menu li > a {
+.header .navbar .navbar__menu li > a, .header--full .navbar .navbar__menu li > a {
   text-decoration: none;
   color: #FFFFFF;
+  transition: all 0.06s ease;
+}
+.header .navbar .navbar__menu li > a:hover, .header--full .navbar .navbar__menu li > a:hover {
+  border-bottom: solid 3px #FFFFFF;
+}
+.header .navbar--collapsed .navbar__menu--collapsed, .header--full .navbar--collapsed .navbar__menu--collapsed {
+  display: none;
+}
+.header .navbar--collapsed h4, .header--full .navbar--collapsed h4 {
+  display: none;
+}
+
+.header--full {
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.8fr 3fr 3fr;
+  grid-template-areas: "title cross" "menu menu" "lang lang";
+}
+.header--full h1 {
+  grid-area: title;
+  align-self: start;
+}
+.header--full svg {
+  grid-area: cross;
+  align-self: start;
+}
+.header--full nav {
+  grid-area: menu;
+  align-self: start;
+}
+.header--full h4 {
+  grid-area: lang;
+  align-self: end;
+  font: normal 500 16px/normal "Montserrat", sans-serif;
+}
+.header--full .navbar--opened .navbar__menu--opened {
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
+  gap: 40px;
 }
 
 .banner {
@@ -205,6 +227,11 @@ h1 {
   align-items: initial;
   gap: 60px;
   margin-bottom: 80px;
+  padding: 0;
+}
+.skills-techs-wraper h1 {
+  padding: 30px 40px;
+  background: url("../assets/HABILIDADES-FONDO.png");
 }
 .skills-techs-wraper__skill-container {
   display: flex;
@@ -212,6 +239,7 @@ h1 {
   justify-content: initial;
   align-items: initial;
   gap: 30px;
+  padding: 0 40px;
 }
 .skills-techs-wraper__skill-container--skill {
   display: grid;
@@ -230,6 +258,7 @@ h1 {
   justify-content: initial;
   align-items: initial;
   gap: 50px;
+  padding: 0 40px;
 }
 .skills-techs-wraper .tech-container__images {
   display: flex;
@@ -273,10 +302,10 @@ h1 {
   align-items: center;
   gap: 25px;
   flex: 0 0 auto;
-  width: 400px;
-  padding: 60px 20px;
+  width: 370px;
+  padding: 50px 20px;
   border-radius: 16px;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.06);
   background-color: #FFFFFF;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -319,6 +348,11 @@ h1 {
   cursor: auto;
 }
 
+.contact {
+  background: url("../assets/CONTACTO-FONDO.png");
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
 .contact__container {
   display: flex;
   flex-direction: column;
@@ -348,10 +382,14 @@ h1 {
   background-color: #FFFFFF;
   border-radius: 16px;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  padding: 18px 16px;
 }
 .contact__container form .contact__inputs-container input::placeholder, .contact__container form .contact__inputs-container textarea::placeholder {
-  font: normal 400 16px/normal "Montserrat", sans-serif;
+  font: normal 400 20px/normal "Montserrat", sans-serif;
   color: #444444;
+}
+.contact__container form .contact__inputs-container input:focus-visible, .contact__container form .contact__inputs-container textarea:focus-visible {
+  border: #c6c6c6;
 }
 .contact__container form .contact__button-container button {
   width: 100%;
@@ -359,6 +397,192 @@ h1 {
   background-color: #1F2D41;
   border-radius: 16px;
   color: #FFFFFF;
+}
+.contact__container form .contact__error-message {
+  color: #FA4F4F;
+  font: normal 400 20px/normal "Montserrat", sans-serif;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.contact__container form .result {
+  align-self: center;
+  margin: 5px 0 15px 0;
+}
+.contact__container form .good-result h3 {
+  color: black;
+}
+.contact__container form .bad-result h3 {
+  color: #FA4F4F;
+}
+
+.footer {
+  padding: 40px 0;
+  background-color: #FA4F4F;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.footer h2 {
+  margin-bottom: 10px;
+}
+.footer h3 {
+  text-align: center;
+}
+.footer__contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.footer__contact-info svg {
+  font-size: 30px;
+}
+
+h1 {
+  font: normal 700 34px/normal "Montserrat", sans-serif;
+}
+
+h2 {
+  font: normal 600 24px/normal "Montserrat", sans-serif;
+}
+
+h3 {
+  font: normal 400 20px/normal "Montserrat", sans-serif;
+}
+
+h4 {
+  font: normal 500 16px/normal "Montserrat", sans-serif;
+}
+
+h5 {
+  font: normal 400 12px/normal "Montserrat", sans-serif;
+}
+
+p {
+  font: normal 400 16px/normal "Montserrat", sans-serif;
+}
+
+.navbar__menu > li > a {
+  font: normal 600 24px/normal "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font: normal 700 20px/normal "Montserrat", sans-serif;
+  }
+  h2 {
+    font: normal 600 18px/normal "Montserrat", sans-serif;
+  }
+  h3 {
+    font: normal 400 16px/normal "Montserrat", sans-serif;
+  }
+  h4 {
+    font: normal 500 12px/normal "Montserrat", sans-serif;
+  }
+  h5 {
+    font: normal 400 8px/normal "Montserrat", sans-serif;
+  }
+  p {
+    font: normal 400 12px/normal "Montserrat", sans-serif;
+  }
+  .navbar__menu--opened > li > a {
+    font: normal 600 18px/normal "Montserrat", sans-serif;
+  }
+  .about, .projects-container, .contact {
+    padding: 0 20px;
+  }
+  .divider-custom .divider-custom-line {
+    width: 60px;
+  }
+  .divider-custom .divider-custom-icon {
+    font-size: 20px;
+  }
+  .header, .header--full {
+    padding: 18px 16px 16px 16px;
+  }
+  .banner {
+    padding: 10px 0 60px 0;
+  }
+  .banner__foto {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  .about {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: initial;
+    gap: 0;
+  }
+  .skills-techs-wraper {
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  .skills-techs-wraper h1 {
+    padding: 20px 40px;
+  }
+  .skills-techs-wraper__skill-container {
+    padding: 0 20px;
+  }
+  .skills-techs-wraper__skill-container--skill {
+    grid-template-columns: 1fr 1.5fr 0.5fr;
+  }
+  .skills-techs-wraper .tech-container {
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .skills-techs-wraper .tech-container__images {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .skills-techs-wraper .tech-container__images figure {
+    width: 50px;
+  }
+  .projects-container {
+    margin-bottom: 20px;
+  }
+  .projects-container__project {
+    padding: 20px;
+    width: 270px;
+  }
+  .projects-container__project .projects-container__project-content > figure {
+    width: 80px;
+  }
+  .projects-container__project .projects-container__project-button button {
+    padding: 15px 0;
+  }
+  .contact > .contact__container > form > .contact__inputs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .contact > .contact__container > form > .contact__inputs-container fieldset {
+    width: 100%;
+  }
+  .footer {
+    gap: 10px;
+  }
+  .footer svg {
+    width: 15px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

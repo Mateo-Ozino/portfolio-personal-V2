@@ -1,0 +1,40 @@
+@use 'mixins'
+@use 'variables'
+
+main
+  background-color: variables.$light-gray
+
+h1
+  color: variables.$dark-blue
+
+.about, .skills-techs-wraper, .projects-container, .contact
+  padding: 0 40px
+
+.divider-custom 
+  margin: 20px 0px
+  width: 100%
+  @include mixins.flex-row(center, center, 0)
+  .divider-custom-line
+    width: 72px
+    height: 5px
+    margin-left: .5rem
+    margin-right: .5rem
+    border-radius: 15px
+  .divider-custom-icon
+    font-size: 25px
+
+.section-title
+  @include mixins.flex-column($gap: 8px)
+  margin-bottom: 30px 
+  .title-line
+    width: 100%
+    height: 2px
+    background-color: variables.$dark-blue
+
+.progress-bar
+  background-color: variables.$gray
+  > div
+    background-color: variables.$red
+
+.main--hidden, .footer--hidden
+  display: none

@@ -30,7 +30,7 @@ export function ContactForm() {
     } finally {
       reset()
       setContactResult(true)
-      setContactSuccess("Email enviado correctamente!")
+      setContactSuccess("Email enviado correctamente! ✅")
     }
   })
 
@@ -47,7 +47,7 @@ export function ContactForm() {
             <fieldset>
               <input 
                 type="text" 
-                className="w-full px-6 py-3"
+                className="w-full"
                 name="name"
                 id="name"
                 placeholder="Nombre y apellido"
@@ -62,12 +62,12 @@ export function ContactForm() {
                   }
                 })}
               />
-              <p>{errors.name?.message}</p>
+              <p className="contact__error-message">{errors.name?.message}</p>
             </fieldset>
             <fieldset>
               <input 
                 type="email"
-                className="w-full px-6 py-3"
+                className="w-full"
                 name="mail"
                 id="mail"
                 placeholder="Correo Electrónico"
@@ -82,12 +82,12 @@ export function ContactForm() {
                   }
                 })} 
               />
-              <p>{errors.mail?.message}</p>
+              <p className="contact__error-message">{errors.mail?.message}</p>
             </fieldset>
             <fieldset>
               <textarea 
                 rows="4"
-                className="w-full resize-none py-3 px-6"
+                className="w-full resize-none"
                 name="message"
                 id="message"
                 placeholder="Mensaje"
@@ -102,20 +102,19 @@ export function ContactForm() {
                   }
                 })} 
               />
-              <p>{errors.mensaje?.message}</p>
+              <p className="contact__error-message">{errors.mensaje?.message}</p>
             </fieldset>
           </div>
           <div className="contact__button-container w-full">
             <button className="py-3 px-8" onClick={onSubmit}>Enviar</button>
           </div>
           <div className={"result " + (contactResult ? "good-result" : "bad-result")}>
-            <h4>
+            <h3>
               {contactSuccess}
-            </h4>
+            </h3>
           </div>
         </form>
       </div>
     </section>
   )
 }
-
