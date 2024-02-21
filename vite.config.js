@@ -10,9 +10,6 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-  esbuild: {
-    jsxInject: `import React from 'react'`,
-  },
   base: './',
   build: {
     assetsDir: 'assets',
