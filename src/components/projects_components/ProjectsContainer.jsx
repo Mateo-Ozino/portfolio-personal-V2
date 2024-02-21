@@ -2,9 +2,17 @@ import { Project } from "./Project"
 import { SectionTitle } from '../general_components/SectionTitle'
 import { projects } from "../../data/projects"
 import { useRef, useState } from 'react';
+import ahorcado from '../../assets/projects_logos/ahorcado.png'
+import che_llueve from '../../assets/projects_logos/che_llueve.svg'
+import encriptador from '../../assets/projects_logos/encriptador.png'
+import graphic_design from '../../assets/projects_logos/graphic_design.png'
+import snake from '../../assets/projects_logos/snake.ico'
 
+const logos = [ahorcado, che_llueve, encriptador, graphic_design, snake]
+
+console.log(logos)
 export function ProjectsContainer() {
-  const logo_url_base = "/src/assets/projects_logos/"
+  const logo_url_base = "../../src/assets/projects_logos/"
 
   const projectsContainerRef = useRef(null);
   const [dragging, setDragging] = useState(false);

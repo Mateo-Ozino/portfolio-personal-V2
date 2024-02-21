@@ -12,7 +12,7 @@ export default defineConfig({
   },
   base: './',
   build: {
-    assetsDir: 'assets',
+    assetsDir: 'assets/',
     outDir: 'dist',
     rollupOptions: {
       output: {

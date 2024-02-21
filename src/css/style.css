@@ -428,7 +428,7 @@ h1 {
 .footer h2 {
   margin-bottom: 10px;
 }
-.footer h3 {
+.footer h4 {
   text-align: center;
 }
 .footer__contact-info {
@@ -437,9 +437,6 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-.footer__contact-info svg {
-  font-size: 30px;
 }
 
 h1 {
@@ -577,11 +574,8 @@ p {
   .contact > .contact__container > form > .contact__inputs-container fieldset {
     width: 100%;
   }
-  .footer {
+  .footer__contact-info {
     gap: 10px;
-  }
-  .footer svg {
-    width: 15px;
   }
 }
 

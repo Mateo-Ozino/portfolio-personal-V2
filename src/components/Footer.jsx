@@ -17,7 +17,7 @@ export function Footer() {
         <h3>mateo.ozino.webdev@gmail.com</h3>
       </div>
       <Divider color={"#1F2D41"}/>
-      <h3>Desarrollado por Mateo Ozino | Todos los derechos reservados © 2024</h3>
+      <h4>Desarrollado por Mateo Ozino | Todos los derechos reservados © 2024</h4>
     </footer>
   )
 }
