@@ -165,7 +165,7 @@ h1 {
 .header--full h4 {
   grid-area: lang;
   align-self: end;
-  font: normal 500 16px/normal "Montserrat", sans-serif;
+  font: normal 500 12px/normal "Montserrat", sans-serif;
 }
 .header--full .navbar--opened .navbar__menu--opened {
   display: flex;
@@ -324,7 +324,7 @@ h1 {
   text-align: center;
 }
 .projects-container__project-content figure {
-  width: 150px;
+  width: 100px;
 }
 .projects-container__project-content p {
   width: 90%;
@@ -384,7 +384,7 @@ h1 {
   padding: 18px 16px;
 }
 .contact__container form .contact__inputs-container input::placeholder, .contact__container form .contact__inputs-container textarea::placeholder {
-  font: normal 400 20px/normal "Montserrat", sans-serif;
+  font: normal 400 16px/normal "Montserrat", sans-serif;
   color: #444444;
 }
 .contact__container form .contact__inputs-container input:focus-visible, .contact__container form .contact__inputs-container textarea:focus-visible {
@@ -438,23 +438,23 @@ h1 {
 }
 
 h1 {
-  font: normal 700 34px/normal "Montserrat", sans-serif;
+  font: normal 700 30px/normal "Montserrat", sans-serif;
 }
 
 h2 {
-  font: normal 600 24px/normal "Montserrat", sans-serif;
+  font: normal 600 20px/normal "Montserrat", sans-serif;
 }
 
 h3 {
-  font: normal 400 20px/normal "Montserrat", sans-serif;
+  font: normal 400 16px/normal "Montserrat", sans-serif;
 }
 
 h4 {
-  font: normal 500 16px/normal "Montserrat", sans-serif;
+  font: normal 500 12px/normal "Montserrat", sans-serif;
 }
 
 h5 {
-  font: normal 400 12px/normal "Montserrat", sans-serif;
+  font: normal 400 10px/normal "Montserrat", sans-serif;
 }
 
 p {
@@ -462,7 +462,7 @@ p {
 }
 
 .navbar__menu > li > a {
-  font: normal 600 24px/normal "Montserrat", sans-serif;
+  font: normal 600 20px/normal "Montserrat", sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -569,6 +569,7 @@ p {
     width: 80px;
   }
   .projects-container__project .projects-container__project-button button {
+    font: normal 500 12px/normal "Montserrat", sans-serif;
     padding: 15px 0;
   }
   .contact {
