@@ -2,12 +2,14 @@ import { SectionTitle } from "./general_components/SectionTitle"
 import { useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser';
 import { useEffect, useState } from 'react';
+import { useHandleModal } from "../store/handleModal";
 
 export function ContactForm() {
   useEffect(() => emailjs.init("-nBrsTfk4nkn9SufI"), []);
 
-  const [contactResult, setContactResult] = useState(false)
-  const [contactSuccess, setContactSuccess] = useState("")
+  const showModal = useHandleModal((state) => state.showModal)
+  
+  const [contactResult, setContactResult] = useState("")
 
   const { register, handleSubmit, reset, formState: {errors} } = useForm()
 
@@ -25,14 +27,14 @@ export function ContactForm() {
         mensage: data.message
       })      
     } catch (error) {
-      alert(error)
-      setContactResult(false)
+      setContactResult(error)
     } finally {
       reset()
-      setContactResult(true)
-      setContactSuccess("Email enviado correctamente! ✅")
+      showModal()
+      document.body.classList.add('modal-open')
     }
   })
+
 
   const fieldRequired = "Este campo es obligatorio"
 
@@ -108,9 +110,9 @@ export function ContactForm() {
           <div className="contact__button-container w-full">
             <button className="py-3 px-8" onClick={onSubmit}>Enviar</button>
           </div>
-          <div className={"result " + (contactResult ? "good-result" : "bad-result")}>
+          <div className="result bad-result">
             <h3>
-              {contactSuccess}
+              {contactResult}
             </h3>
           </div>
         </form>

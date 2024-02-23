@@ -5,11 +5,16 @@ import { ContactForm } from "./ConctactForm"
 import { Banner } from "./Banner"
 import { useHandleMenu } from '../store/handleMenu'
 
+
 export function Main() {
+  // Estado de responsive navbar
   const isClosed = useHandleMenu((state) => state.isClosed) //Inicializado en true
 
   return (
-    <main className={isClosed ? "main" : "main--hidden"} id="main">
+    <main
+      id="main" 
+      className={ isClosed ? "main" : "main--hidden" } 
+      >
       <Banner />
       <About />
       <SkillsContainer />

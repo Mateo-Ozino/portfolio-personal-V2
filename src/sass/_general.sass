@@ -1,6 +1,9 @@
 @use 'mixins'
 @use 'variables'
 
+body
+  height: 100%  
+
 main
   background-color: variables.$light-gray
 
@@ -38,3 +41,43 @@ h1
 
 .main--hidden, .footer--hidden
   display: none
+
+.modal-open
+  overflow: hidden
+
+.modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.5)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+
+.modal
+  @include mixins.flex-column(center, center, 26px)
+  position: fixed
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 1000
+  &__content
+    @include mixins.flex-column(center, center, 26px)
+    background: variables.$white
+    border-radius: 16px
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06)
+    padding: 40px
+    h2
+      font: variables.$h2
+      text-align: center
+  &__close-button
+    @include mixins.flex-row(center, center, 0)
+    background: variables.$white
+    border-radius: 60px
+    padding: 20px
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06)
+    svg
+      font-size: 34px

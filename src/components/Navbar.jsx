@@ -4,6 +4,7 @@ import { useHandleMenu } from "../store/handleMenu";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
+  // Estados de la navbar
   const isClosed = useHandleMenu((state) => state.isClosed) //Inicializado en true
   const openMenu = useHandleMenu((state) => state.openMenu)
 

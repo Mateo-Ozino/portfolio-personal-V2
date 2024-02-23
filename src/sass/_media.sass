@@ -84,6 +84,7 @@
   
   .contact
     padding-top: 10px
+    padding-bottom: 80px 
   .contact > .contact__container > form > .contact__inputs-container
     @include mixins.flex-column(center, center, $gap: 14px)
     fieldset
@@ -101,3 +102,15 @@
   .footer
     &__contact-info
       gap: 10px
+  
+  .modal
+    width: 75%
+    &__content
+      h2
+        font: variables.$mobile-h2
+      figure
+        width: 110px
+    &__close-button
+      padding: 16px
+      svg
+        font-size: 24px
