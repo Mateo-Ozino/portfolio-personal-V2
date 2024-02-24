@@ -16,13 +16,10 @@ export function Navbar() {
   }
 
   useEffect(() => {
-    // Configuración inicial
     handleResize()
 
-    // Agregar el evento de escucha del cambio de tamaño
     window.addEventListener('resize', handleResize)
 
-    // Limpiar el evento de escucha al desmontar el componente
     return () => {
       window.removeEventListener('resize', handleResize)
     }

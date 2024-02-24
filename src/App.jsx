@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      { isShown ? <SuccessModal closeModal={handleCloseModal} /> : "" }
+      { isShown ? <SuccessModal closeModal={handleCloseModal} isOpen={isShown} /> : "" }
       <Header />
       <Main />
       <Footer />

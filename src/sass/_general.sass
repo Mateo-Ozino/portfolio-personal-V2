@@ -73,11 +73,15 @@ h1
     h2
       font: variables.$h2
       text-align: center
+    figure
+      max-width: 200px
+      width: 50%
   &__close-button
     @include mixins.flex-row(center, center, 0)
     background: variables.$white
     border-radius: 60px
     padding: 20px
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06)
+    cursor: pointer
     svg
       font-size: 34px

@@ -17,6 +17,10 @@
 
 .header
   @include mixins.flex-row(space-between, center)
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
   padding: 30px 20px
   background-color: variables.$red
   color: variables.$white
@@ -72,6 +76,7 @@
 
 //BANNER STYLES
 .banner
+  margin-top: 100px 
   padding-top: 70px
   padding-bottom: 100px
   @include mixins.flex-column(center, center, 0)
