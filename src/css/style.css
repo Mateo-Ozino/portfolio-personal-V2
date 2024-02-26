@@ -418,6 +418,11 @@ h1 {
   background-color: #1F2D41;
   border-radius: 16px;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
+}
+.projects-container__project-button button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.26);
 }
 
 .contact {
@@ -469,6 +474,11 @@ h1 {
   background-color: #1F2D41;
   border-radius: 16px;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
+}
+.contact__container form .contact__button-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.26);
 }
 .contact__container form .contact__error-message {
   color: #FA4F4F;

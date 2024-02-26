@@ -36,7 +36,7 @@ export function Navbar() {
               <li><a href="#projects-container">Proyectos</a></li>
               <li><a href="#contact">Contacto</a></li>
             </ul>
-            {/* <h4>Esp | Eng</h4> */}
+            <h4>Esp | Eng</h4>
           </nav>
         ) : (
           <>
@@ -48,7 +48,7 @@ export function Navbar() {
                 <li onClick={openMenu}><a href="#contact">Contacto</a></li>
               </ul>
             </nav>
-            {/* <h4 style={isClosed ? {display: "none"} : {display: "block"}}>Esp | Eng</h4> */}
+            <h4 style={isClosed ? {display: "none"} : {display: "block"}}>Esp | Eng</h4>
             {isClosed ? <IoMenu onClick={openMenu}/> : <IoClose onClick={openMenu}/>}
           </>
         )
