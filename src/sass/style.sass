@@ -34,7 +34,7 @@
     font-size: 30px
   .navbar
     @include mixins.flex-row($align: center, $gap: 30px)
-    .navbar__menu
+    &__menu
       @include mixins.flex-row($align: center, $gap: 30px)
       list-style: none
       padding: 0
@@ -44,6 +44,8 @@
         transition: all 0.06s ease
         &:hover
           border-bottom: solid 3px variables.$white
+    &__translator
+      @include mixins.flex-row(center, center, 5px)
   .navbar--collapsed
     .navbar__menu--collapsed
       display: none

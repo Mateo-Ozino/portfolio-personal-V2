@@ -191,7 +191,7 @@ h1 {
   align-items: center;
   gap: 30px;
 }
-.header .navbar .navbar__menu, .header--full .navbar .navbar__menu {
+.header .navbar__menu, .header--full .navbar__menu {
   display: flex;
   flex-direction: row;
   justify-content: initial;
@@ -200,13 +200,20 @@ h1 {
   list-style: none;
   padding: 0;
 }
-.header .navbar .navbar__menu li > a, .header--full .navbar .navbar__menu li > a {
+.header .navbar__menu li > a, .header--full .navbar__menu li > a {
   text-decoration: none;
   color: #FFFFFF;
   transition: all 0.06s ease;
 }
-.header .navbar .navbar__menu li > a:hover, .header--full .navbar .navbar__menu li > a:hover {
+.header .navbar__menu li > a:hover, .header--full .navbar__menu li > a:hover {
   border-bottom: solid 3px #FFFFFF;
+}
+.header .navbar__translator, .header--full .navbar__translator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 .header .navbar--collapsed .navbar__menu--collapsed, .header--full .navbar--collapsed .navbar__menu--collapsed {
   display: none;
