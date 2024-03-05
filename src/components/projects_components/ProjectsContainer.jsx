@@ -2,8 +2,10 @@ import { Project } from "./Project"
 import { SectionTitle } from '../general_components/SectionTitle'
 import { projects } from "../../data/projects"
 import { useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 export function ProjectsContainer() {
+  const { t, i18n } = useTranslation()
   const projectsContainerRef = useRef(null);
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -28,7 +30,7 @@ export function ProjectsContainer() {
 
   return (
     <section className="projects-container" id="projects-container">
-      <SectionTitle>Proyectos</SectionTitle>
+      <SectionTitle>{t('projectsTitle')}</SectionTitle>
       <section 
       className="projects-container__project-wraper"
       ref={projectsContainerRef}
@@ -49,7 +51,7 @@ export function ProjectsContainer() {
                 url={url} 
                 isDeployed={isDeployed}
                 >
-                {description}
+                {description[i18n.resolvedLanguage]}
               </Project>
             )
           })

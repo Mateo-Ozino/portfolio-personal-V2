@@ -3,9 +3,12 @@ import { useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser';
 import { useEffect, useState } from 'react';
 import { useHandleModal } from "../store/handleModal";
+import { useTranslation } from 'react-i18next';
 
 export function ContactForm() {
   useEffect(() => emailjs.init("-nBrsTfk4nkn9SufI"), []);
+
+  const { t } = useTranslation()
 
   const showModal = useHandleModal((state) => state.showModal)
   
@@ -35,14 +38,13 @@ export function ContactForm() {
     }
   })
 
-
   const fieldRequired = "Este campo es obligatorio"
 
   const fieldIncorrect = "El contenido es incorrecto"
 
   return (
     <section className="contact" id="contact">
-      <SectionTitle>Contactame</SectionTitle>
+      <SectionTitle>{t('contactTitle')}</SectionTitle>
       <div className="contact__container">
         <form onSubmit={e => e.preventDefault()}>
           <div className="contact__inputs-container w-full">
@@ -52,7 +54,7 @@ export function ContactForm() {
                 className="w-full"
                 name="name"
                 id="name"
-                placeholder="Nombre y apellido"
+                placeholder={t('nameInput')}
                 {...register("name", {
                   required: {
                     value: true,
@@ -72,7 +74,7 @@ export function ContactForm() {
                 className="w-full"
                 name="mail"
                 id="mail"
-                placeholder="Correo Electrónico"
+                placeholder={t('emailInput')}
                 {...register("mail", {
                   required: {
                     value: true,
@@ -92,7 +94,7 @@ export function ContactForm() {
                 className="w-full resize-none"
                 name="message"
                 id="message"
-                placeholder="Mensaje"
+                placeholder={t('messageInput')}
                 {...register("mensaje", {
                   required: {
                     value: true,
@@ -108,7 +110,7 @@ export function ContactForm() {
             </fieldset>
           </div>
           <div className="contact__button-container w-full">
-            <button className="py-3 px-8" onClick={onSubmit}>Enviar</button>
+            <button className="py-3 px-8" onClick={onSubmit}>{t('sendButton')}</button>
           </div>
           <div className="result bad-result">
             <h3>

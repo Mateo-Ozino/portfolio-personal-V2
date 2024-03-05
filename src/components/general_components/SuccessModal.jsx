@@ -3,8 +3,11 @@ import { IoClose } from "react-icons/io5";
 import PropTypes from "prop-types";
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslation } from 'react-i18next';
 
 export function SuccessModal({ closeModal, isOpen }) {
+  const { t } = useTranslation()
+
   useEffect(() => {
     const container = document.getElementById('modal-overlay')
     let closeModalByTime
@@ -34,7 +37,7 @@ export function SuccessModal({ closeModal, isOpen }) {
             transition={{ duration: 0.4 }}
           >
             <div className="modal__content">
-              <h2>¡Su respuesta se ha enviado con éxito!</h2>
+              <h2>{t('modalTitle')}</h2>
               <figure>
                 <img src={success} alt="Green check icon denoting success" />
               </figure>

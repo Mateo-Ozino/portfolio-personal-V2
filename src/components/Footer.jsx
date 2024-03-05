@@ -3,8 +3,11 @@ import { FaGithub } from 'react-icons/fa';
 import { FaRegEnvelope } from 'react-icons/fa6';
 import { Divider } from '../components/general_components/Divider';
 import { useHandleMenu } from '../store/handleMenu';
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+  const { t } = useTranslation()
+
   // Estado de responsive navbar
   const isClosed = useHandleMenu((state) => state.isClosed) //Inicializado en true
 
@@ -15,15 +18,15 @@ export function Footer() {
       id="footer"
       className={isClosed ? "footer" : "footer--hidden"} 
       >
-      <h2>Mis redes</h2>
+      <h2>{t('footerTitle')}</h2>
       <div className='footer__contact-info'>
-        <IoLogoLinkedin />
-        <FaGithub />
-        <FaRegEnvelope />
+        <a href="https://www.linkedin.com/in/mateo-ozino-caligaris/" target="_blank" rel="noopener noreferrer"><IoLogoLinkedin /></a>
+        <a href="https://github.com/Mateo-Ozino" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+        <a href="mailto:mateo.ozino.webdev@gmail.com"><FaRegEnvelope /></a>
         <h3>mateo.ozino.webdev@gmail.com</h3>
       </div>
       <Divider color={"#1F2D41"} />
-      <h4>Desarrollado por Mateo Ozino | Todos los derechos reservados © 2024</h4>
+      <h4>{t('credits')}</h4>
     </footer>
   )
 }

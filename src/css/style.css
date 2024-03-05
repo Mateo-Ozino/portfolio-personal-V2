@@ -555,6 +555,12 @@ p {
   font: normal 600 20px/normal "Montserrat", sans-serif;
 }
 
+@media (max-width: 1024px) {
+  .header .navbar__translator, .header--full .navbar__translator {
+    justify-content: flex-start;
+    align-self: flex-end;
+  }
+}
 @media (max-width: 768px) {
   h1 {
     font: normal 700 20px/normal "Montserrat", sans-serif;
