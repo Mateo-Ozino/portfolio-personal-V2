@@ -14,8 +14,12 @@
   p
     font: variables.$mobile-p
 
-  .navbar__menu--opened > li > a 
-    font: variables.$mobile-h2
+  .navbar__menu--opened
+    li
+      width: fit-content
+    li > a 
+      font: variables.$mobile-h2
+  
 
   .about, .projects-container, .contact
     padding: 0 20px

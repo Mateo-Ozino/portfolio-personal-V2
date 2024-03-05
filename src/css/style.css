@@ -44,6 +44,10 @@ h1 {
   color: #1F2D41;
 }
 
+.active {
+  border-bottom: solid 3px #FFFFFF;
+}
+
 .about, .skills-techs-wraper, .projects-container, .contact {
   padding: 0 40px;
 }
@@ -580,7 +584,10 @@ p {
   p {
     font: normal 400 12px/normal "Montserrat", sans-serif;
   }
-  .navbar__menu--opened > li > a {
+  .navbar__menu--opened li {
+    width: fit-content;
+  }
+  .navbar__menu--opened li > a {
     font: normal 600 18px/normal "Montserrat", sans-serif;
   }
   .about, .projects-container, .contact {

@@ -3,6 +3,7 @@ import { IoClose } from "react-icons/io5";
 import { useHandleMenu } from "../store/handleMenu";
 import { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next'
+import { motion } from "framer-motion"
 
 export function Navbar() {
   const { t, i18n } = useTranslation()
@@ -63,10 +64,39 @@ export function Navbar() {
           <>
             <nav className={isClosed ? "navbar--collapsed" : "navbar--opened"}>
               <ul className={isClosed ? "navbar__menu--collapsed" : "navbar__menu--opened"}>
-                <li onClick={openMenu}><a href="#about">{t('menu1')}</a></li>
-                <li onClick={openMenu}><a href="#skills-tech-wraper">{t('menu2')}</a></li>
-                <li onClick={openMenu}><a href="#projects-container">{t('menu3')}</a></li>
-                <li onClick={openMenu}><a href="#contact">{t('menu4')}</a></li>
+                <motion.li
+                  initial={{ opacity: 0 }} 
+                  whileInView={{ opacity: 1 }}
+                  exit={{ opacity: 1 }} 
+                  transition={{ duration: 0.4, delay: 0 }} 
+                  onClick={openMenu}
+                  >
+                  <a href="#about">{t('menu1')}</a>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0 }} 
+                  whileInView={{ opacity: 1 }} 
+                  transition={{ duration: 0.4, delay: 0.05 }} 
+                  onClick={openMenu}
+                  >
+                  <a href="#skills-tech-wraper">{t('menu2')}</a>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0 }} 
+                  whileInView={{ opacity: 1 }} 
+                  transition={{ duration: 0.4, delay: 0.1 }}  
+                  onClick={openMenu}
+                  >
+                  <a href="#projects-container">{t('menu3')}</a>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0 }} 
+                  whileInView={{ opacity: 1 }} 
+                  transition={{ duration: 0.4, delay: 0.15 }}  
+                  onClick={openMenu}
+                  >
+                  <a href="#contact">{t('menu4')}</a>
+                </motion.li>
               </ul>
             </nav>
             <div 
