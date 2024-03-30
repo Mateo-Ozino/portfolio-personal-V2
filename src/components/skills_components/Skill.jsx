@@ -12,7 +12,7 @@ export function Skill({ id, skill, level }) {
 }
 
 Skill.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   skill: PropTypes.string,
   level: PropTypes.number
 };

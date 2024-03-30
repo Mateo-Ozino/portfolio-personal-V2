@@ -1,7 +1,6 @@
 import { Project } from "./Project"
 import { SectionTitle } from '../general_components/SectionTitle'
-import { projects } from "../../data/projects"
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 
 export function ProjectsContainer() {
@@ -10,6 +9,21 @@ export function ProjectsContainer() {
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [projects, setProjects] = useState()
+
+  useEffect(() => {
+    fetchData()
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://mateoozino-portfolio-api.onrender.com/projects/');
+      const result = await response.json();
+      setProjects(result);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   const handleMouseDown = (event) => {
     setDragging(true);
@@ -40,8 +54,8 @@ export function ProjectsContainer() {
       onMouseLeave={handleMouseUp}
       >
         {
-          projects.map(project => {
-            const { id, name, description, logo, url, isDeployed } = project
+          projects && projects.sort((a, b) => a.order - b.order).map(project => {
+            const { id, name, description, logo, url, is_deployed } = project
 
             return (
               <Project 
@@ -49,7 +63,7 @@ export function ProjectsContainer() {
                 name={name} 
                 logo={logo} 
                 url={url} 
-                isDeployed={isDeployed}
+                isDeployed={is_deployed}
                 >
                 {description[i18n.resolvedLanguage]}
               </Project>
