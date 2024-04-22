@@ -3,6 +3,7 @@ import che_llueve from '../assets/projects_logos/che_llueve.svg'
 import encriptador from '../assets/projects_logos/encriptador.png'
 import graphic_design from '../assets/projects_logos/graphic_design.png'
 import snake from '../assets/projects_logos/snake.ico'
+import fastapi from '../assets/projects_logos/fastapi.svg'
 
 export const projects = [
   {
@@ -36,6 +37,20 @@ export const projects = [
   {
     "id": 3,
     "name": {
+      "es": "API REST - Portfolio personal",
+      "en": "API REST - Personal portfolio"
+    },
+    "description": {
+      "es": "API REST que desarrollé para consumir desde mi portfolio personal. Utilicé el framework de Python FastAPI y para la base de datos, MongoDB.",
+      "en": "REST API that I developed to consume from my personal portfolio. I used the FastAPI framework for Python and MongoDB for the database."
+    },
+    "logo": fastapi,
+    "url": "https://github.com/Mateo-Ozino/api-portfolio-personal/tree/main",
+    "isDeployed": false
+  },
+  {
+    "id": 4,
+    "name": {
       "es": "Encriptador de texto",
       "en": "Text Encrypter"
     },
@@ -48,7 +63,7 @@ export const projects = [
     "isDeployed": true
   },
   {
-    "id": 4,
+    "id": 5,
     "name": {
       "es": "Snake Game - Python",
       "en": "Snake Game - Python"
@@ -62,7 +77,7 @@ export const projects = [
     "isDeployed": false
   },
   {
-    "id": 5,
+    "id": 6,
     "name": {
       "es": "Juego del ahorcado",
       "en": "Hangman"
