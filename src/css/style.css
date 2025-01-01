@@ -87,6 +87,11 @@ h1 {
 }
 
 .progress-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: initial;
+  align-items: initial;
+  gap: 0;
   background-color: #C6C6C6;
 }
 .progress-bar > div {

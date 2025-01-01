@@ -26,7 +26,7 @@ export function Footer() {
         <h3>mateo.ozino.webdev@gmail.com</h3>
       </div>
       <Divider color={"#1F2D41"} />
-      <h4>{t('credits')}</h4>
+      <h4>{t('credits')}{new Date().getFullYear()}</h4>
     </footer>
   )
 }
